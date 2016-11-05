@@ -43,6 +43,12 @@
     <Compile Include="CustomFormatProviders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Task1.CustomerLogic\Task1.CustomerLogic.csproj">
+      <Project>{FD8AA724-C7A8-44B6-B6A6-586299CCAE0E}</Project>
+      <Name>Task1.CustomerLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

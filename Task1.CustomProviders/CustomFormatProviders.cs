@@ -6,16 +6,17 @@ using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Task1.CustomerLogic;
 
 namespace Task1.CustomProviders
 {
-    public class PhoneFormatProvider : IFormatProvider, ICustomFormatter
+    public class PhoneNameFormatProvider : IFormatProvider, ICustomFormatter
     {
         private IFormatProvider parent;
 
-        public PhoneFormatProvider() : this(CultureInfo.CurrentCulture) { }
+        public PhoneNameFormatProvider() : this(CultureInfo.CurrentCulture) { }
 
-        public PhoneFormatProvider(IFormatProvider parent)
+        public PhoneNameFormatProvider(IFormatProvider parent)
         {
             this.parent = parent;
         }
@@ -29,7 +30,14 @@ namespace Task1.CustomProviders
 
         public string Format(string format, object arg, IFormatProvider formatProvider)
         {
-            return "haha";//todo
+            if (arg == null || format != "PN")
+                return string.Format(parent, format, arg);
+            Customer customer = arg as Customer;
+            if (customer != null)
+                return customer.ContactPhone + customer.Name;
+            IFormattable formattable = arg as IFormattable;
+            string s = formattable?.ToString(format, formatProvider);
+            return s ?? arg.ToString();
         }
     }
 }

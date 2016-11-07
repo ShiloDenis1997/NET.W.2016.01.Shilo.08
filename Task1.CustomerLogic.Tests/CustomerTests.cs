@@ -87,5 +87,13 @@ namespace Task1.CustomerLogic.Tests
             Assert.AreEqual(0, string.CompareOrdinal(actual, expected),
                 $"{expected} expected, but {actual} got");
         }
+
+
+        [TestCase("A", typeof(FormatException))]
+        [Test]
+        public void ToString_UnsupportedFormat_ExceptionExpected(string format, Type expectedException)
+        {
+            Assert.Throws(expectedException, () => { new Customer().ToString(format); });
+        }
     }
 }

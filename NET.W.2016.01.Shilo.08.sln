@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.CustomProviders", "Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.CustomerLogic.Tests", "Task1.CustomerLogic.Tests\Task1.CustomerLogic.Tests.csproj", "{94471DB9-E07A-4015-B0DC-3A8411A4A493}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.CustomProviders.Tests", "Task1.CustomProviders.Tests\Task1.CustomProviders.Tests.csproj", "{A87591F9-4F95-4641-BFD9-44071957C3B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{94471DB9-E07A-4015-B0DC-3A8411A4A493}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94471DB9-E07A-4015-B0DC-3A8411A4A493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94471DB9-E07A-4015-B0DC-3A8411A4A493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A87591F9-4F95-4641-BFD9-44071957C3B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87591F9-4F95-4641-BFD9-44071957C3B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87591F9-4F95-4641-BFD9-44071957C3B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87591F9-4F95-4641-BFD9-44071957C3B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

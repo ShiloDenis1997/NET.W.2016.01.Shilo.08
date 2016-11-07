@@ -18,14 +18,16 @@ namespace Task1.CustomerLogic
         public decimal Revenue { get; set; }
 
         /// <summary>
-        /// Returns string representation of Customer info according
+        /// Creates string representation of <see cref="Customer"/> info according
         /// to <paramref name="format"/> and <paramref name="formatProvider"/>
         /// </summary>
         /// <param name="format">Supports "G", "NRP", "P", "N", "R",
         ///  "NP", "NR", "F" formats</param>
         /// <param name="formatProvider">If not specified, 
         /// <see cref="CultureInfo.CurrentCulture"/> will be used</param>
-        /// <returns></returns>
+        /// <returns>String representation of <see cref="Customer"/></returns>
+        /// <exception cref="FormatException">Throws if 
+        /// <paramref name="format"/> has and unknown format</exception>
         public string ToString(string format, IFormatProvider formatProvider = null)
         {
             if (string.IsNullOrEmpty(format))

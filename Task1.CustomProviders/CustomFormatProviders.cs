@@ -19,6 +19,7 @@ namespace Task1.CustomProviders
     {
         private IFormatProvider parent;
 
+        public IFormatProvider Parent { get; private set; }
         /// <summary>Constructs provider with the <paramref name="parent"/>
         /// provider, which will be used if current provider does not know
         /// how to work with format. If not specified, 
@@ -27,7 +28,7 @@ namespace Task1.CustomProviders
         /// <param name="parent"></param>
         public PhoneNameFormatProvider(IFormatProvider parent = null)
         {
-            this.parent = parent ?? CultureInfo.CurrentCulture;
+            Parent = parent ?? CultureInfo.CurrentCulture;
         }
 
         public object GetFormat(Type formatType)
@@ -36,11 +37,18 @@ namespace Task1.CustomProviders
                 return this;
             return Thread.CurrentThread.CurrentCulture.GetFormat(formatType);
         }
-
+        
+        /// <param name="format"></param>
+        /// <param name="arg"></param>
+        /// <param name="formatProvider"></param>
+        /// <exception cref="ArgumentNullException">Throws if 
+        /// <paramref name="arg"/> is null</exception>
+        /// <exception cref="FormatException">Throws if neither this nor <see cref="Parent"/>
+        ///  knows how to work with <paramref name="format"/></exception>
         public string Format(string format, object arg, IFormatProvider formatProvider)
         {
             if (arg == null || format != "PN")
-                return string.Format(parent, "{0:" + format + "}", arg);
+                return string.Format(Parent, "{0:" + format + "}", arg);
             Customer customer = arg as Customer;
             if (customer != null)
                 return customer.ContactPhone + ", " + customer.Name;

@@ -10,15 +10,24 @@ using Task1.CustomerLogic;
 
 namespace Task1.CustomProviders
 {
+    /// <summary>
+    /// Formats <see cref="Customer"/> to representation 
+    /// "<see cref="Customer.ContactPhone"/>, <see cref="Customer.Name"/>",
+    /// uses "PN" string format
+    /// </summary>
     public class PhoneNameFormatProvider : IFormatProvider, ICustomFormatter
     {
         private IFormatProvider parent;
 
-        public PhoneNameFormatProvider() : this(CultureInfo.CurrentCulture) { }
-
-        public PhoneNameFormatProvider(IFormatProvider parent)
+        /// <summary>Constructs provider with the <paramref name="parent"/>
+        /// provider, which will be used if current provider does not know
+        /// how to work with format. If not specified, 
+        /// <see cref="CultureInfo.CurrentCulture"/>
+        /// will be used </summary>
+        /// <param name="parent"></param>
+        public PhoneNameFormatProvider(IFormatProvider parent = null)
         {
-            this.parent = parent;
+            this.parent = parent ?? CultureInfo.CurrentCulture;
         }
 
         public object GetFormat(Type formatType)

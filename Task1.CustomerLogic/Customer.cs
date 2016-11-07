@@ -7,13 +7,25 @@ using System.Threading.Tasks;
 
 namespace Task1.CustomerLogic
 {
+    /// <summary>
+    /// Contains info about customer and provides different formats
+    /// to string representation of data
+    /// </summary>
     public class Customer : IFormattable
     {
         public string Name { get; set; }
         public string ContactPhone { get; set; }
         public decimal Revenue { get; set; }
 
-
+        /// <summary>
+        /// Returns string representation of Customer info according
+        /// to <paramref name="format"/> and <paramref name="formatProvider"/>
+        /// </summary>
+        /// <param name="format">Supports "G", "NRP", "P", "N", "R",
+        ///  "NP", "NR", "F" formats</param>
+        /// <param name="formatProvider">If not specified, 
+        /// <see cref="CultureInfo.CurrentCulture"/> will be used</param>
+        /// <returns></returns>
         public string ToString(string format, IFormatProvider formatProvider = null)
         {
             if (string.IsNullOrEmpty(format))

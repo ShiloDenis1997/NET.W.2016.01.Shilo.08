@@ -31,10 +31,10 @@ namespace Task1.CustomProviders
         public string Format(string format, object arg, IFormatProvider formatProvider)
         {
             if (arg == null || format != "PN")
-                return string.Format(parent, format, arg);
+                return string.Format(parent, "{0:" + format + "}", arg);
             Customer customer = arg as Customer;
             if (customer != null)
-                return customer.ContactPhone + customer.Name;
+                return customer.ContactPhone + ", " + customer.Name;
             IFormattable formattable = arg as IFormattable;
             string s = formattable?.ToString(format, formatProvider);
             return s ?? arg.ToString();

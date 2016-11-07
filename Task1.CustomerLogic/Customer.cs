@@ -33,9 +33,9 @@ namespace Task1.CustomerLogic
                 case "R":
                     return Revenue.ToString("###,###.00", formatProvider);
                 case "NP":
-                    return Name + " " + ContactPhone;
+                    return Name + ", " + ContactPhone;
                 case "NR":
-                    return Name + " " + Revenue.ToString("###,###.00", formatProvider);
+                    return Name + ", " + Revenue.ToString("###,###.00", formatProvider);
                 case "F":
                     return Revenue.ToString("#.##", formatProvider);
 

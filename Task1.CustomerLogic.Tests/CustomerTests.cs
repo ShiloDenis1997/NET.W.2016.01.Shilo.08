@@ -23,7 +23,7 @@ namespace Task1.CustomerLogic.Tests
                         Revenue = 1000000,
                         ContactPhone = "+1 (425) 555-0100"
                     },
-                    "NRP", CultureInfo.GetCultureInfo("en-GB"),
+                    "NRP", CultureInfo.InvariantCulture,
                     "Jeffrey Richter, 1,000,000.00, +1 (425) 555-0100");
                 yield return new TestCaseData(new Customer
                     {
@@ -31,7 +31,7 @@ namespace Task1.CustomerLogic.Tests
                         Revenue = 1000000,
                         ContactPhone = "+1 (425) 555-0100"
                     },
-                    "P", CultureInfo.GetCultureInfo("en-GB"),
+                    "P", CultureInfo.InvariantCulture,
                     "+1 (425) 555-0100");
                 yield return new TestCaseData(new Customer
                     {
@@ -39,7 +39,7 @@ namespace Task1.CustomerLogic.Tests
                         Revenue = 1000000,
                         ContactPhone = "+1 (425) 555-0100"
                     },
-                    "N", CultureInfo.GetCultureInfo("en-GB"),
+                    "N", CultureInfo.InvariantCulture,
                     "Jeffrey Richter");
                 yield return new TestCaseData(new Customer
                     {
@@ -47,7 +47,7 @@ namespace Task1.CustomerLogic.Tests
                         Revenue = 1000000,
                         ContactPhone = "+1 (425) 555-0100"
                     },
-                    "R", CultureInfo.GetCultureInfo("en-GB"),
+                    "R", CultureInfo.InvariantCulture,
                     "1,000,000.00");
                 yield return new TestCaseData(new Customer
                     {
@@ -55,7 +55,7 @@ namespace Task1.CustomerLogic.Tests
                         Revenue = 1000000,
                         ContactPhone = "+1 (425) 555-0100"
                     },
-                    "NP", CultureInfo.GetCultureInfo("en-GB"),
+                    "NP", CultureInfo.InvariantCulture,
                     "Jeffrey Richter, +1 (425) 555-0100");
                 yield return new TestCaseData(new Customer
                     {
@@ -63,7 +63,7 @@ namespace Task1.CustomerLogic.Tests
                         Revenue = 1000000,
                         ContactPhone = "+1 (425) 555-0100"
                     },
-                    "NR", CultureInfo.GetCultureInfo("en-GB"),
+                    "NR", CultureInfo.InvariantCulture,
                     "Jeffrey Richter, 1,000,000.00");
                 yield return new TestCaseData(new Customer
                     {
@@ -71,7 +71,7 @@ namespace Task1.CustomerLogic.Tests
                         Revenue = 1000000,
                         ContactPhone = "+1 (425) 555-0100"
                     },
-                    "F", CultureInfo.GetCultureInfo("en-GB"),
+                    "F", CultureInfo.InvariantCulture,
                     "1000000");
             }
         }

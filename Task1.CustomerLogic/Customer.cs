@@ -34,7 +34,7 @@ namespace Task1.CustomerLogic
                 format = "G";
             if (formatProvider == null)
                 formatProvider = CultureInfo.CurrentCulture;
-            switch (format)
+            switch (format.ToUpperInvariant())
             {
                 case "G":
                 case "NRP":
@@ -52,10 +52,18 @@ namespace Task1.CustomerLogic
                     return Name + ", " + Revenue.ToString("###,###.00", formatProvider);
                 case "F":
                     return Revenue.ToString("#.##", formatProvider);
-
                 default:
                     throw new FormatException($"The {format} format string isn't specified");
             }
+        }
+
+        /// <summary>
+        /// Creates string representation of <see cref="Customer"/> by
+        /// invoking <see cref="Customer.ToString(string, IFormatProvider)"/>
+        /// </summary>
+        public override string ToString()
+        {
+            return ToString("G", CultureInfo.CurrentCulture);
         }
     }
 }
